@@ -1,16 +1,21 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from "next/head";
+import Header from "../components/Header";
+import Feed from "../components/Feed";
 
 const Home = () => {
   return (
-    <div className="">
+    <div className="h-screen overflow-y-scroll bg-gray-50">
       <Head>
         <title>Instagram 2.0</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1>hihi</h1>
+      {/* Header */}
+      <Header />
+      {/* Feed */}
+      <Feed />
+      {/* Modal */}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
