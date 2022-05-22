@@ -16,14 +16,14 @@ function Header() {
         {/* Left */}
         <div className="relative hidden w-24 cursor-pointer lg:inline-grid">
           <Image
-            src="https://links.papareact.com/ocw"
+            src="https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.svg"
             layout="fill"
             objectFit="contain"
           />
         </div>
         <div className="relative w-10 flex-shrink-0 cursor-pointer lg:hidden">
           <Image
-            src="https://links.papareact.com/jjm"
+            src="https://logos-download.com/wp-content/uploads/2016/03/Instagram_monochrome_variant_Logo_2016.svg"
             layout="fill"
             objectFit="contain"
           />
