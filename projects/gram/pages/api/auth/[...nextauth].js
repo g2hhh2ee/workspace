@@ -17,16 +17,16 @@ export default NextAuth({
   pages: {
     signIn: "/auth/signin",
   },
-  //   callbacks: {
-  //     async session({ session, token, user }) {
-  //       session.user.username = session.user.name
-  //         .split(" ")
-  //         .join("")
-  //         .toLocaleLowerCase();
+  callbacks: {
+    async session({ session, token, user }) {
+      session.user.username = session.user.name
+        .split(" ")
+        .join("")
+        .toLocaleLowerCase();
+      // Mutzaengee Jihee => mutzaengeejihee
+      session.user.uid = token.sub;
 
-  //       session.user.uid = token.sub;
-
-  //       return session;
-  //     },
-  //   },
+      return session;
+    },
+  },
 });
