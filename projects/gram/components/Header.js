@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalAtom";
 import { useRouter } from "next/router";
 import {
   SearchIcon,
@@ -15,6 +17,8 @@ function Header() {
   // loading 같은 거 띄워주려면 session이랑 status 이런 거 넣어주면 됨.
   const { data: session } = useSession();
   // console.log(session);
+  const [open, setOpen] = useRecoilState(modalState);
+  // const open = useRecoilValue(modalState);
   const router = useRouter();
 
   return (
@@ -68,7 +72,10 @@ function Header() {
                   3
                 </div>
               </div>
-              <PlusCircleIcon className="navBtn" />
+              <PlusCircleIcon
+                className="navBtn"
+                onClick={() => setOpen(true)}
+              />
               <UserGroupIcon className="navBtn" />
               <HeartIcon className="navBtn" />
               <img
